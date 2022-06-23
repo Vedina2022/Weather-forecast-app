@@ -1,0 +1,102 @@
+.search-form {
+  position: relative;
+  width: 500px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #2682bb;
+  border-radius: 5px;
+  outline: none;
+  background: #f9f5da;
+  color: #022236;
+}
+button {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  border: none;
+  color: #f6e881;
+  background: #2682bb;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  color: #2682bb;
+  background-color: #f6e881;
+}
+.btn {
+  color: #2682bb;
+  background: #f6e881;
+  border-radius: 5px;
+  border: none;
+  width: 140px;
+}
+.btn:hover {
+  color: #f6e881;
+  background-color: #2682bb;
+}
+.col-3 {
+  width: 20%;
+}
+body {
+  font-family: "Roboto Flex", sans-serif;
+  background: no-repeat url(Ukraine.jpg);
+  background-size: 100%;
+}
+h2 {
+  font-size: 22px;
+}
+ul {
+  list-style: none;
+}
+.container {
+  max-width: 800px;
+  margin-top: 30px;
+  padding: 20px 50px;
+  border-radius: 5px;
+  background: linear-gradient(#5b92f1, #f6e881);
+  opacity: 0.9;
+}
+.city {
+  font-size: 30px;
+  font-weight: 300;
+}
+.cloudy {
+  font-size: 50px;
+  color: #2682bb;
+}
+.day {
+  font-weight: bold;
+  color: #2682bb;
+}
+.max-temperature {
+  font-size: 14px;
+  font-weight: bold;
+}
+.min-temperature {
+  font-size: 12px;
+}
+.icon-weather {
+  font-size: 25px;
+  color: #2682bb;
+  margin-top: 5px;
+}
+
+.date {
+  font-size: 12px;
+}
+.temperature {
+  font-size: 46px;
+}
+.units {
+  position: relative;
+  top: -22px;
+}
+.celsius {
+  text-decoration: none;
+  color: #116494;
+}

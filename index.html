@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martel:wght@600&family=Noto+Sans:ital@1&family=Roboto+Flex:opsz,wght@8..144,300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/207538a123.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather forecast</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="search">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Search location..."
+                id="city-input"
+              />
+            </div>
+            <div class="col-3">
+              <button type="submit">Search</button>
+            </div>
+            <div class="col-3">
+              <button class="btn btn-succes" id="current-location-button">
+                Current location
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li class="city" id="city">MYKOLAIV</li>
+            <!-- <li>Ukraine</li> -->
+            <li class="current-time" id="current-time">Saturday 10:04 a.m.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>CURRENT WEATHER</li>
+            <li>
+              <span class="temperature" id="temperature"><!-- 18 --></span>
+              <span class="units"
+                >°C
+                <!--  <a href="#" class="celsius" id="celsius"> |</a>
+                <a href="#" class="fahrenheit" id="fahrenheit">°F</a> -->
+              </span>
+              <span class="cloudy">
+                <!-- <i class="fa-solid fa-cloud"></i> --></span
+              >
+            </li>
+            <li id="description">Cloudy</li>
+            <li>
+              Humidity:
+              <span id="humidity"><!-- 56 --></span>
+              %
+            </li>
+            <li>
+              Wind:
+              <span id="wind"><!-- 13 --></span>
+              km/h
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li class="day">SUN</li>
+            <!-- <li class="date">MAY 22</li> -->
+            <li>
+              <span class="max-temperature">23°C</span>
+              <span class="min-temperature">/ 12°C</span>
+            </li>
+            <li><i class="fa-solid fa-cloud-sun icon-weather"></i></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li class="day">MON</li>
+            <!-- <li class="date">MAY 23</li> -->
+            <li>
+              <span class="max-temperature">18°C</span>
+              <span class="min-temperature">/ 9°C</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-cloud-showers-heavy icon-weather"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li class="day">TUE</li>
+            <!-- <li class="date">MAY 24</li> -->
+            <li>
+              <span class="max-temperature">21°C</span>
+              <span class="min-temperature">/ 9°C</span>
+            </li>
+            <li><i class="fa-solid fa-cloud-sun icon-weather"></i></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li class="day">WED</li>
+            <!-- <li class="date">MAY 25</li> -->
+            <li>
+              <span class="max-temperature">23°C</span>
+              <span class="min-temperature">/ 14°C</span>
+            </li>
+            <li><i class="fa-solid fa-cloud-sun icon-weather"></i></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li class="day">THU</li>
+            <!--  <li class="date">MAY 26</li> -->
+            <li>
+              <span class="max-temperature">23°C</span>
+              <span class="min-temperature">/ 15°C</span>
+            </li>
+            <li><i class="fa-solid fa-cloud-sun icon-weather"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
