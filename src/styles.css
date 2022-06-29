@@ -52,6 +52,7 @@ h2 {
 }
 ul {
   list-style: none;
+  margin-bottom: 0;
 }
 .container {
   max-width: 800px;
@@ -65,9 +66,8 @@ ul {
   font-size: 30px;
   font-weight: 300;
 }
-.cloudy {
-  font-size: 50px;
-  color: #2682bb;
+.float-left {
+  margin-left: 32px;
 }
 .day {
   font-weight: bold;
@@ -111,4 +111,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+li:first-letter {
+  text-transform: capitalize;
 }
