@@ -69,7 +69,6 @@ function displayWeatherCondition(response) {
   let descriptionElement = document.querySelector("#description");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
@@ -80,6 +79,7 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function searchCity(city) {

@@ -14,28 +14,26 @@ input {
   background: #f9f5da;
   color: #022236;
 }
-button {
-  position: absolute;
-  width: 80px;
-  height: 40px;
+.search-city {
   border: none;
   color: #f6e881;
   background: #2682bb;
   border-radius: 5px;
   cursor: pointer;
 }
-button:hover {
+.search-city:hover {
   color: #2682bb;
   background-color: #f6e881;
 }
-.btn {
+.location-button {
   color: #2682bb;
   background: #f6e881;
   border-radius: 5px;
   border: none;
-  width: 140px;
+  width: 160px;
+  height: 40px;
 }
-.btn:hover {
+.location-button:hover {
   color: #f6e881;
   background-color: #2682bb;
 }
@@ -55,7 +53,7 @@ ul {
   margin-bottom: 0;
 }
 .container {
-  max-width: 800px;
+  max-width: 700px;
   margin-top: 30px;
   padding: 20px 50px;
   border-radius: 5px;
@@ -103,7 +101,7 @@ ul {
 .developer {
   font-size: 14px;
   text-align: center;
-  margin: 15px 0 0;
+  margin: 35px 0 0;
   opacity: 1;
 }
 a {
@@ -114,4 +112,7 @@ a:hover {
 }
 li:first-letter {
   text-transform: capitalize;
+}
+.current-weather {
+  margin-left: 90px;
 }

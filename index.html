@@ -27,20 +27,29 @@
   <body>
     <div class="container">
       <div class="search">
-        <form class="search-form" id="search-form">
+        <form id="search-form" class="mb-3">
           <div class="row">
             <div class="col-6">
               <input
-                type="search"
-                placeholder="Search location..."
+                type="serch"
+                placeholder="Type a city..."
+                class="form-control"
                 id="city-input"
+                autocomplete="off"
               />
             </div>
             <div class="col-3">
-              <button type="submit">Search</button>
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-90 search-city"
+              />
             </div>
             <div class="col-3">
-              <button class="btn btn-succes" id="current-location-button">
+              <button
+                class="btn btn-primary location-button"
+                id="current-location-button"
+              >
                 Current location
               </button>
             </div>
@@ -62,29 +71,31 @@
           />
         </div>
         <div class="col">
-          <ul>
-            <li>CURRENT WEATHER</li>
-            <li>
-              <span class="temperature" id="temperature"><!-- 18 --></span>
+          <div class="current-weather">
+            <ul>
+              <!--  <li>CURRENT WEATHER</li> -->
+              <li>
+                <span class="temperature" id="temperature"><!-- 18 --></span>
 
-              <span class="units"
-                >°C
-                <!--  <a href="#" class="celsius" id="celsius"> |</a>
+                <span class="units"
+                  >°C
+                  <!--  <a href="#" class="celsius" id="celsius"> |</a>
                 <a href="#" class="fahrenheit" id="fahrenheit">°F</a> -->
-              </span>
-            </li>
-            <li id="description"></li>
-            <li>
-              Humidity:
-              <span id="humidity"><!-- 56 --></span>
-              %
-            </li>
-            <li>
-              Wind:
-              <span id="wind"><!-- 13 --></span>
-              km/h
-            </li>
-          </ul>
+                </span>
+              </li>
+              <li id="description"></li>
+              <li>
+                Humidity:
+                <span id="humidity"><!-- 56 --></span>
+                %
+              </li>
+              <li>
+                Wind:
+                <span id="wind"><!-- 13 --></span>
+                km/h
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <hr />
