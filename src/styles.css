@@ -1,7 +1,7 @@
 .search-form {
   position: relative;
   width: 500px;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-bottom: 40px;
   margin-left: 30px;
 }
@@ -14,26 +14,28 @@ input {
   background: #f9f5da;
   color: #022236;
 }
-.search-city {
+button {
+  position: absolute;
+  width: 80px;
+  height: 40px;
   border: none;
   color: #f6e881;
   background: #2682bb;
   border-radius: 5px;
   cursor: pointer;
 }
-.search-city:hover {
+button:hover {
   color: #2682bb;
   background-color: #f6e881;
 }
-.location-button {
+.btn {
   color: #2682bb;
   background: #f6e881;
   border-radius: 5px;
   border: none;
-  width: 160px;
-  height: 40px;
+  width: 140px;
 }
-.location-button:hover {
+.btn:hover {
   color: #f6e881;
   background-color: #2682bb;
 }
@@ -94,25 +96,31 @@ ul {
   position: relative;
   top: -22px;
 }
-.celsius {
-  text-decoration: none;
-  color: #116494;
-}
+
 .developer {
   font-size: 14px;
   text-align: center;
   margin: 35px 0 0;
   opacity: 1;
 }
-a {
+.developer-link {
   text-decoration: none;
 }
-a:hover {
+.developer-link:hover {
   text-decoration: underline;
 }
+
 li:first-letter {
   text-transform: capitalize;
 }
 .current-weather {
-  margin-left: 90px;
+  margin-left: 120px;
+}
+.current-weather .celsius {
+  color: #022236;
+  cursor: default;
+  text-decoration: none;
+}
+.current-weather .fahrenheit {
+  text-decoration: none;
 }

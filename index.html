@@ -27,29 +27,21 @@
   <body>
     <div class="container">
       <div class="search">
-        <form id="search-form" class="mb-3">
+        <form class="mb-3 search-form" id="search-form">
           <div class="row">
-            <div class="col-6">
+            <div class="col-7">
               <input
-                type="serch"
-                placeholder="Type a city..."
-                class="form-control"
+                type="search"
+                placeholder="Search location..."
                 id="city-input"
                 autocomplete="off"
               />
             </div>
             <div class="col-3">
-              <input
-                type="submit"
-                value="Search"
-                class="btn btn-primary w-90 search-city"
-              />
+              <button type="submit">Search</button>
             </div>
             <div class="col-3">
-              <button
-                class="btn btn-primary location-button"
-                id="current-location-button"
-              >
+              <button class="btn btn-succes" id="current-location-button">
                 Current location
               </button>
             </div>
@@ -75,13 +67,13 @@
             <ul>
               <!--  <li>CURRENT WEATHER</li> -->
               <li>
-                <span class="temperature" id="temperature"><!-- 18 --></span>
-
-                <span class="units"
-                  >°C
-                  <!--  <a href="#" class="celsius" id="celsius"> |</a>
-                <a href="#" class="fahrenheit" id="fahrenheit">°F</a> -->
-                </span>
+                <span class="temperature" id="temperature"></span>
+                <span class="units">
+                  <a href="#" class="celsius" id="celsius-link">°C |</a>
+                  <a href="#" class="fahrenheit" id="fahrengeit-link"
+                    >°F</a
+                  ></span
+                >
               </li>
               <li id="description"></li>
               <li>
@@ -162,6 +154,7 @@
         <a
           href="https://github.com/Vedina2022/Weather-forecast-app.git"
           target="_blank"
+          class="developer-link"
           >Open-source code</a
         >, by Nadiia Kyshinska
       </p>
