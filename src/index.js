@@ -29,29 +29,43 @@ function getForecast(coordinates) {
   let lon = coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
-
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-            <div class="weather-forecast-day">${day}</div>
-            <!-- <li class="date">MAY 22</li> -->
-            <div class="weather-forecast-temperatures">
-              <span class="max-temperature">23°C</span>
-              <span class="min-temperature">/ 12°C</span>
-            </div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+            <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
             <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
               alt="party cloud"
-              width="40"
+              width="44"
             />
+            <div class="weather-forecast-temperatures">
+              <span class="max-temperature">${Math.round(
+                forecastDay.temp.max
+              )}°</span>
+              <span class="min-temperature">/ ${Math.round(
+                forecastDay.temp.min
+              )}°</span>
+            </div>
+            
             </div>
           `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -134,4 +148,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Mykolaiv");
-displayForecast();
