@@ -1,41 +1,3 @@
-/* let weather = {
-  paris: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  tokyo: {
-    temp: 17.3,
-    humidity: 50,
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20,
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100,
-  },
-  moscow: {
-    temp: -5,
-    humidity: 20,
-  },
-};
-let city = prompt("Enter a city");
-city = city.toLowerCase().trim();
-if (weather[city] !== undefined) {
-  let temperature = weather[city].temp;
-  let celsiusTemprature = Math.round(temperature);
-  let fahrenheitTemperature = Math.round(temperature * 1.8 + 32);
-  let humidity = weather[city].humidity;
-  alert(
-    `It is currently ${celsiusTemprature}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity} %`
-  );
-} else {
-  alert(
-    `Sorry, we don't know the weather for this city, try going to https://www.google.com/search?q=weather+${city}`
-  );
-}
- */
 function formatDate(date) {
   let currentDays = [
     "Sunday",
@@ -61,6 +23,40 @@ let currentDate = document.querySelector("#date");
 let now = new Date();
 currentDate.innerHTML = formatDate(now);
 
+function getForecast(coordinates) {
+  let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+            <div class="weather-forecast-day">${day}</div>
+            <!-- <li class="date">MAY 22</li> -->
+            <div class="weather-forecast-temperatures">
+              <span class="max-temperature">23°C</span>
+              <span class="min-temperature">/ 12°C</span>
+            </div>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="party cloud"
+              width="40"
+            />
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -84,6 +80,7 @@ function displayWeatherCondition(response) {
   );
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
@@ -137,3 +134,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Mykolaiv");
+displayForecast();
