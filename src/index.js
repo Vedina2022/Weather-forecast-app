@@ -9,6 +9,23 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = currentDays[now.getDay()];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[now.getMonth()];
+  let currentDate = now.getDate();
+  let year = now.getFullYear();
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -17,7 +34,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day} ${hours}:${minutes}`;
+  return `${day}, ${month} ${currentDate}, ${year}, ${hours}:${minutes}`;
 }
 let currentDate = document.querySelector("#date");
 let now = new Date();
@@ -52,7 +69,8 @@ function displayForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png"
               alt="party cloud"
-              width="44"
+              width="46"
+              class="forecast-icon"
             />
             <div class="weather-forecast-temperatures">
               <span class="max-temperature">${Math.round(
