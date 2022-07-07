@@ -40,12 +40,24 @@ let currentDate = document.querySelector("#date");
 let now = new Date();
 currentDate.innerHTML = formatDate(now);
 
+/* function changePicture(response) {
+  console.log(response.data[2].urls.full);
+  let imgUrl = response.data[0].urls.full;
+  document.body.style.background = "url(`imgUrl`)";
+}
+
+function getPictures(response) {
+  let apiKey = "V7m2RbSN7eTJn_VI74dTJ0r9i36fBvtm85ZU9AsETr8";
+  let location = response;
+  let apiUrl = `https://api.unsplash.com/search/photos?page=1&query=office_id=${apiKey}`;
+  axios.get(apiUrl).then(changePicture);
+} */
+
 function getForecast(coordinates) {
   let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 function formatDay(timestamp) {
@@ -113,6 +125,7 @@ function displayWeatherCondition(response) {
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
+  /* getPictures(cityElement); */
 }
 function searchCity(city) {
   let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";

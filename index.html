@@ -26,91 +26,92 @@
   </head>
   <body>
     <div class="container">
-      <div class="search">
-        <form class="search-form" id="search-form">
-          <div class="row">
-            <div class="col-8">
-              <input
-                type="search"
-                placeholder="Search for location..."
-                class="form-control search-input"
-                id="city-input"
-                autocomplete="off"
-              />
+     
+        <div class="search">
+          <form class="search-form" id="search-form">
+            <div class="row">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Search for location..."
+                  class="form-control search-input"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-2">
+                <button type="submit">Search</button>
+              </div>
+              <div class="col-2">
+                <button class="btn btn-succes" id="current-location-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-geo-alt-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="col-2">
-              <button type="submit">Search</button>
-            </div>
-            <div class="col-2">
-              <button class="btn btn-succes" id="current-location-button">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-geo-alt-fill"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="row">
-        <div class="col">
-          <ul>
-            <li class="city" id="city"></li>
-            <li class="current-time" id="date">Saturday 10:04 a.m.</li>
-          </ul>
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="party cloud"
-            class="float-left today-icon"
-            id="icon"
-          />
+          </form>
         </div>
-        <div class="col">
-          <div class="current-weather">
+        <div class="row">
+          <div class="col">
             <ul>
-              <li>
-                <span class="temperature" id="temperature"></span>
-                <span class="units">
-                  <a href="#" class="celsius" id="celsius-link">°C |</a>
-                  <a href="#" class="fahrenheit" id="fahrengeit-link"
-                    >°F</a
-                  ></span
-                >
-              </li>
-              <li id="description"></li>
-              <li>
-                Humidity:
-                <span id="humidity"> </span>
-                %
-              </li>
-              <li>
-                Wind:
-                <span id="wind"></span>
-                km/h
-              </li>
+              <li class="city" id="city"></li>
+              <li class="current-time" id="date"></li>
             </ul>
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="party cloud"
+              class="float-left today-icon"
+              id="icon"
+            />
+          </div>
+          <div class="col">
+            <div class="current-weather">
+              <ul>
+                <li>
+                  <span class="temperature" id="temperature"></span>
+                  <span class="units">
+                    <a href="#" class="celsius" id="celsius">°C |</a>
+                    <a href="#" class="fahrenheit" id="fahrengeit"
+                      >°F</a
+                    ></span
+                  >
+                </li>
+                <li id="description"></li>
+                <li>
+                  Humidity:
+                  <span id="humidity"> </span>
+                  %
+                </li>
+                <li>
+                  Wind:
+                  <span id="wind"></span>
+                  km/h
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
+        <!--  <hr /> -->
+        <div class="weather-forecast" id="forecast"></div>
+        <p class="developer" id="developer">
+          <a
+            href="https://github.com/Vedina2022/Weather-forecast-app.git"
+            target="_blank"
+            class="developer-link"
+            >Open-source code</a
+          >, by Nadiia Kyshinska
+        </p>
       </div>
-      <!--  <hr /> -->
-      <div class="weather-forecast" id="forecast"></div>
-      <p class="developer" id="developer">
-        <a
-          href="https://github.com/Vedina2022/Weather-forecast-app.git"
-          target="_blank"
-          class="developer-link"
-          >Open-source code</a
-        >, by Nadiia Kyshinska
-      </p>
-
       <script src="./src/index.js"></script>
     </div>
   </body>

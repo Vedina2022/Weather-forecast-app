@@ -109,6 +109,13 @@ li:first-letter {
   cursor: default;
   text-decoration: none;
 }
+.current-weather .fahrenheit {
+  color: #87757a;
+  text-decoration: none;
+}
+.current-weather .fahrenheit:hover {
+  color: #87757a;
+}
 .weather-forecast {
   text-align: center;
 }
