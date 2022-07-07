@@ -104,17 +104,13 @@ li:first-letter {
 .current-weather {
   margin-left: 140px;
 }
+.current-weather .fahrenheit {
+  text-decoration: none;
+}
 .current-weather .celsius {
-  color: #022236;
+  color: #202124;
   cursor: default;
   text-decoration: none;
-}
-.current-weather .fahrenheit {
-  color: #87757a;
-  text-decoration: none;
-}
-.current-weather .fahrenheit:hover {
-  color: #87757a;
 }
 .weather-forecast {
   text-align: center;
