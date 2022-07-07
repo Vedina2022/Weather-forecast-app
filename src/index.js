@@ -68,7 +68,7 @@ function displayForecast(response) {
                 forecastDay.weather[0].icon
               }@2x.png"
               alt="party cloud"
-              width="46"
+              width="50"
               class="forecast-icon"
             />
             <div class="weather-forecast-temperatures">
@@ -79,8 +79,7 @@ function displayForecast(response) {
                 forecastDay.temp.min
               )}°</span>
             </div>
-            
-            </div>
+        </div>
           `;
     }
   });
@@ -90,6 +89,7 @@ function displayForecast(response) {
 }
 function displayWeatherCondition(response) {
   let temperatureElement = document.querySelector("#temperature");
+  let feelsLikeElement = document.querySelector("#feels-like");
   let cityElement = document.querySelector("#city");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -100,6 +100,7 @@ function displayWeatherCondition(response) {
   celciusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   cityElement.innerHTML = response.data.name;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -109,6 +110,7 @@ function displayWeatherCondition(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  console.log(response.data);
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
