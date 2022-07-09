@@ -39,13 +39,11 @@ button:hover {
   color: #f6e881;
   background-color: #2682bb;
 }
-
 body {
   font-family: "Roboto Flex", sans-serif;
   background: no-repeat url(Ukraine.jpg);
   background-size: 100%;
 }
-
 ul {
   list-style: none;
   margin: 0;
