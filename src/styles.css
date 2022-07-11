@@ -100,12 +100,13 @@ li:first-letter {
 .current-weather {
   margin-left: 150px;
 }
-.current-weather .fahrenheit {
-  text-decoration: none;
-}
-.current-weather .celsius {
+
+.current-weather .active {
   color: #202124;
   cursor: default;
+  text-decoration: none;
+}
+.current-weather .fahrenheit {
   text-decoration: none;
 }
 .weather-forecast {
