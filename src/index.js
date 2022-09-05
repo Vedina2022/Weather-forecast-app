@@ -42,7 +42,7 @@ let now = new Date();
 currentDate.innerHTML = formatDate(now);
 
 function getForecast(coordinates) {
-  let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
+  let apiKey = "acdafd58d2b7bf1eca6d5caa45fe2f0f";
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -64,7 +64,7 @@ function displayForecast(response) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
-        `<div class="col">
+        `<div class="col daily-forecast">
             <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
             <img
               src="http://openweathermap.org/img/wn/${
@@ -75,12 +75,12 @@ function displayForecast(response) {
               class="forecast-icon"
             />
             <div class="weather-forecast-temperatures">
-              <span class="max-temperature">${Math.round(
+              <div class="max-temperature">${Math.round(
                 forecastDay.temp.max
-              )}°</span>
-              <span class="min-temperature">/ ${Math.round(
+              )}°</div>
+              <div class="min-temperature">${Math.round(
                 forecastDay.temp.min
-              )}°</span>
+              )}°</div>
             </div>
         </div>
           `;
@@ -122,7 +122,7 @@ function displayWeatherCondition(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
+  let apiKey = "acdafd58d2b7bf1eca6d5caa45fe2f0f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -134,7 +134,7 @@ function handleSubmit(event) {
 }
 
 function searchLocation(position) {
-  let apiKey = "40bcef58e511d97cbfeb1c45d1bb99a3";
+  let apiKey = "acdafd58d2b7bf1eca6d5caa45fe2f0f";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
